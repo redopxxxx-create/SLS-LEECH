@@ -1,0 +1,56 @@
+{
+  "name": "SLS-LEECH BOT",
+  "description": "High-speed Leech bot for Telegram hosted on Heroku.",
+  "keywords": [
+    "telegram",
+    "leech",
+    "sls",
+    "pyrogram",
+    "bot"
+  ],
+  "repository": "https://github.com/redopxxxx-create/SLS-LEECH",
+  "website": "https://github.com/redopxxxx-create/SLS-LEECH",
+  "success_url": "/",
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API HASH from my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your Bot Token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram User ID (e.g., 12345678)",
+      "required": true
+    },
+    "DATABASE_URL": {
+      "description": "Your MongoDB URI for saving settings/users",
+      "required": true
+    },
+    "LOG_CHANNEL": {
+      "description": "The ID of the channel where logs will be sent (starts with -100)",
+      "required": true
+    },
+    "AUTH_CHATS": {
+      "description": "IDs of groups authorized to use the bot, separated by space.",
+      "required": false,
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
